@@ -1,4 +1,3 @@
-#include <chemfiles/capi/trajectory.h>
 #include <stdio.h>
 #include <stdlib.h>
 
