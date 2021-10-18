@@ -1,0 +1,3 @@
+[submodule "chemfiles"]
+	path = chemfiles
+	url = git@github.com:chemfiles/chemfiles.git
