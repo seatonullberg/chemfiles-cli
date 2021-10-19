@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "argparse/argparse.h"
+#include "argparse.h"
 #include "chemfiles.h"
+
+#include "config.h"
 
 /* program usage string */
 static const char *const usage[] = {

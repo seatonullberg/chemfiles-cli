@@ -1,6 +1,6 @@
 [submodule "chemfiles"]
-	path = chemfiles
+	path = deps/chemfiles
 	url = git@github.com:chemfiles/chemfiles.git
 [submodule "argparse"]
-	path = argparse
+	path = deps/argparse
 	url = git@github.com:cofyc/argparse.git
