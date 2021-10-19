@@ -4,8 +4,6 @@
 #include "argparse.h"
 #include "chemfiles.h"
 
-#include "config.h"
-
 /* program usage string */
 static const char *const usage[] = {
     "cf [options] [--] <src> <dst>",
