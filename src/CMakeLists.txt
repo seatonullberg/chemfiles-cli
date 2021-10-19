@@ -5,3 +5,4 @@ target_include_directories(cf
         ${CMAKE_SOURCE_DIR}/deps/argparse/
         ${CMAKE_SOURCE_DIR}/deps/chemfiles/include/
 )
+install(TARGETS cf)
