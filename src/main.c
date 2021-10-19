@@ -4,6 +4,10 @@
 #include "argparse.h"
 #include "chemfiles.h"
 
+#define VERSION_MAJOR 0
+#define VERSION_MINOR 1
+#define VERSION_MICRO 0
+
 /* program usage string */
 static const char *const usage[] = {
     "cf [options] [--] <src> <dst>",
@@ -16,7 +20,7 @@ static const char *const description =
 
 /* program epilogue */
 static const char *const epilogue =
-    "\nAuthor: Seaton Ullberg <seatonullberg@gmail.com>\nVersion: 0.1.0";
+    "\nAuthor: Seaton Ullberg <seatonullberg@gmail.com>";
 
 int main(int argc, const char **argv) {
   /* iteration counter */
@@ -27,12 +31,14 @@ int main(int argc, const char **argv) {
   const char *dst = NULL;
 
   /* initialize options */
+  int version = 0;
   const char *in_fmt = NULL;
   const char *out_fmt = NULL;
 
   /* define all options */
   struct argparse_option options[] = {
       OPT_HELP(),
+      OPT_BOOLEAN('v', "version", &version, "print version number and exit"),
       OPT_STRING('i', "in-fmt", &in_fmt, "format of the input file"),
       OPT_STRING('o', "out-fmt", &out_fmt, "format of the output file"),
       OPT_END(),
@@ -45,9 +51,16 @@ int main(int argc, const char **argv) {
 
   /* parse the arguments */
   argc = argparse_parse(&argparse, argc, argv);
+
+  /* process version command */
+  if (version) {
+    printf("chemfiles-cli v%d.%d.%d\n", VERSION_MAJOR, VERSION_MINOR, VERSION_MICRO);
+    exit(0);
+  }
+
+  /* store positional arguments */
   src = argv[0];
   dst = argv[1];
-
   
   /* read a trajectory from the input file */
   CHFL_TRAJECTORY* in_trajectory = NULL;

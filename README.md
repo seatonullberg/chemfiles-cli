@@ -7,11 +7,11 @@ Usage: cf [options] [--] <src> <dst>
 A simple chemistry file conversion CLI which wraps the chemfiles library
 
     -h, --help            show this help message and exit
+    -v, --version         print version number and exit
     -i, --in-fmt=<str>    format of the input file
     -o, --out-fmt=<str>   format of the output file
 
 Author: Seaton Ullberg <seatonullberg@gmail.com>
-Version: 0.1.0
 ```
 
 ## Installation
